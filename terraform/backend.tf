@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "nexgen-bmi-healthcheck-tfstate-027024089660"
-    key            = "nexgen-bmi-healthcheck/terraform.tfstate"
-    region         = "us-east-2"
-    dynamodb_table = "nexgen-bmi-healthcheck-tf-locks"
+    bucket         = "new-bmi-check-tfstate-027024089660"
+    key            = "new-bmi-check/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "new-bmi-check-tf-locks"
     encrypt        = true
   }
 }

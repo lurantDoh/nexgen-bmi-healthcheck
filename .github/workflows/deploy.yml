@@ -11,8 +11,8 @@ permissions:
   security-events: write
 
 env:
-  AWS_REGION: us-east-2
-  PROJECT_NAME: nexgen-bmi-healthcheck
+  AWS_REGION: us-east-1
+  PROJECT_NAME: new-bmi-check
 
 jobs:
   test:

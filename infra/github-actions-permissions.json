@@ -43,7 +43,7 @@
         "ecr:TagResource",
         "ecr:ListTagsForResource"
       ],
-      "Resource": "arn:aws:ecr:us-east-2:027024089660:repository/nexgen-bmi-healthcheck"
+      "Resource": "arn:aws:ecr:us-east-1:027024089660:repository/new-bmi-check"
     },
     {
       "Sid": "LambdaDeploy",
@@ -71,8 +71,8 @@
         "lambda:ListFunctionUrlConfigs"
       ],
       "Resource": [
-        "arn:aws:lambda:us-east-2:027024089660:function:nexgen-bmi-healthcheck",
-        "arn:aws:lambda:us-east-2:027024089660:function:nexgen-bmi-healthcheck:*"
+        "arn:aws:lambda:us-east-1:027024089660:function:new-bmi-check",
+        "arn:aws:lambda:us-east-1:027024089660:function:new-bmi-check:*"
       ]
     },
     {
@@ -91,7 +91,7 @@
         "iam:UntagRole",
         "iam:ListInstanceProfilesForRole"
       ],
-      "Resource": "arn:aws:iam::027024089660:role/nexgen-bmi-healthcheck-lambda"
+      "Resource": "arn:aws:iam::027024089660:role/new-bmi-check-lambda"
     },
     {
       "Sid": "IAMGetManagedPolicy",
@@ -118,9 +118,9 @@
         "logs:ListTagsForResource"
       ],
       "Resource": [
-        "arn:aws:logs:us-east-2:027024089660:log-group:/aws/lambda/nexgen-bmi-healthcheck",
-        "arn:aws:logs:us-east-2:027024089660:log-group:/aws/lambda/nexgen-bmi-healthcheck:*",
-        "arn:aws:logs:us-east-2:027024089660:log-group:*"
+        "arn:aws:logs:us-east-1:027024089660:log-group:/aws/lambda/new-bmi-check",
+        "arn:aws:logs:us-east-1:027024089660:log-group:/aws/lambda/new-bmi-check:*",
+        "arn:aws:logs:us-east-1:027024089660:log-group:*"
       ]
     },
     {
@@ -133,8 +133,8 @@
         "s3:DeleteObject"
       ],
       "Resource": [
-        "arn:aws:s3:::nexgen-bmi-healthcheck-tfstate-027024089660",
-        "arn:aws:s3:::nexgen-bmi-healthcheck-tfstate-027024089660/*"
+        "arn:aws:s3:::new-bmi-check-tfstate-027024089660",
+        "arn:aws:s3:::new-bmi-check-tfstate-027024089660/*"
       ]
     },
     {
@@ -147,7 +147,7 @@
         "s3:PutEncryptionConfiguration"
       ],
       "Resource": [
-        "arn:aws:s3:::nexgen-bmi-healthcheck-tfstate-027024089660",
+        "arn:aws:s3:::new-bmi-check-tfstate-027024089660",
         "*"
       ]
     },
@@ -161,7 +161,7 @@
         "dynamodb:DeleteItem",
         "dynamodb:DescribeTable"
       ],
-      "Resource": "arn:aws:dynamodb:us-east-2:027024089660:table/nexgen-bmi-healthcheck-tf-locks"
+      "Resource": "arn:aws:dynamodb:us-east-1:027024089660:table/new-bmi-check-tf-locks"
     }
   ]
 }

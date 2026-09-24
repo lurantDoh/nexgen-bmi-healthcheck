@@ -6,4 +6,4 @@ run:
 	uvicorn app.main:app --host 0.0.0.0 --port 8080
 
 build:
-	docker build -t nexgen-bmi-healthcheck .
+	docker build -t new-bmi-check .

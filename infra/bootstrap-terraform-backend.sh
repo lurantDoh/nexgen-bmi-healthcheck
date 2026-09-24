@@ -3,14 +3,20 @@ set -euo pipefail
 
 : "${AWS_REGION:?AWS_REGION must be set}"
 
-state_bucket="nexgen-bmi-healthcheck-tfstate-027024089660"
-lock_table="nexgen-bmi-healthcheck-tf-locks"
+state_bucket="new-bmi-check-tfstate-027024089660"
+lock_table="new-bmi-check-tf-locks"
 
 if ! aws s3api head-bucket --bucket "$state_bucket" >/dev/null 2>&1; then
-  aws s3api create-bucket \
-    --bucket "$state_bucket" \
-    --region "$AWS_REGION" \
-    --create-bucket-configuration LocationConstraint="$AWS_REGION"
+  if [[ "$AWS_REGION" == "us-east-1" ]]; then
+    aws s3api create-bucket \
+      --bucket "$state_bucket" \
+      --region "$AWS_REGION"
+  else
+    aws s3api create-bucket \
+      --bucket "$state_bucket" \
+      --region "$AWS_REGION" \
+      --create-bucket-configuration LocationConstraint="$AWS_REGION"
+  fi
 fi
 
 aws s3api put-bucket-versioning \
