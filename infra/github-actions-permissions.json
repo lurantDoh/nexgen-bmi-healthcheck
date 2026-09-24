@@ -138,9 +138,24 @@
       ]
     },
     {
+      "Sid": "TFStateBootstrap",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:GetBucketLocation",
+        "s3:PutBucketVersioning",
+        "s3:PutEncryptionConfiguration"
+      ],
+      "Resource": [
+        "arn:aws:s3:::nexgen-bmi-healthcheck-tfstate-027024089660",
+        "*"
+      ]
+    },
+    {
       "Sid": "TFLock",
       "Effect": "Allow",
       "Action": [
+        "dynamodb:CreateTable",
         "dynamodb:GetItem",
         "dynamodb:PutItem",
         "dynamodb:DeleteItem",

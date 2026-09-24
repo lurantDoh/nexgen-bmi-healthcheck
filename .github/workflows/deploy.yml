@@ -53,6 +53,9 @@ jobs:
         with:
           terraform_version: "1.9.8"
 
+      - name: Ensure Terraform backend exists
+        run: ./infra/bootstrap-terraform-backend.sh
+
       - name: Terraform Init
         working-directory: terraform
         run: terraform init -input=false
@@ -150,6 +153,9 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.9.8"
+
+      - name: Ensure Terraform backend exists
+        run: ./infra/bootstrap-terraform-backend.sh
 
       - name: Terraform Init
         working-directory: terraform
