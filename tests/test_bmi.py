@@ -58,7 +58,7 @@ def test_ui_home():
     assert response.status_code == 200
     assert "text/html" in response.headers["content-type"]
     assert "BMI Health Check" in response.text
-    assert "/static/excelcloud-logo.jpg" in response.text
+    assert "/static/next-generation-fitness-logo.jpg" in response.text
 
 
 def test_brand_assets_served():
